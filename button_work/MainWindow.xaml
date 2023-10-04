@@ -7,29 +7,35 @@
         mc:Ignorable="d"
         Title="Task" Height="339" Width="577">
     <Grid>
-        <Button Content="Menu (1)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
-        <Button Content="Menu (2)" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
-        <Button Content="Menu(3)" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
-        <Button Content="Button (1)" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Height="34" Width="108" ToolTip="Подсказка для кнопки"/>
-        <Button Content="Кноппка с зад." 
-                    Name="button2"
+        <StackPanel Margin="10,10,430,2" Name="stackPanel1" Background="#AA22CCCC">
+
+            <Button Name ="button1" Content="Наведись на меня" HorizontalAlignment="Left" Margin="10,49,0,0" 
+                    Height="34" Width="118" ToolTip="Подсказка для кнопки" Click="Button_Click_1">
+            </Button>
+            <Button Content="Кноппка с зад." 
+                    x:Name="button2"
                     Height="34" 
-                    Width="108"
+                    Width="118"
                     ToolTipService.InitialShowDelay="1000"
                     ToolTipService.BetweenShowDelay="5000"
-                    ToolTip="Подсказка с InitialShowDelay=1000 и BetweenShowDelay=5000" Click="button2_Click" Margin="10,88,459,201"/>
-        <Button Name="button3" Content="Картинка" Margin="10,127,459,161">
-            <Button.ToolTip>
-                <ToolTip HasDropShadow="False" Background="#AA22CCCC">
-                    <StackPanel>
-                        <TextBlock>Текст подсказки</TextBlock>
-                        <Image Source="/166893-anime_banner-anime-rukav-fan_art-kavajnaya-360x640.jpg"></Image>
-                    </StackPanel>
-                </ToolTip>
-            </Button.ToolTip>
-        </Button>
-        <Button Content="Button(4)" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
-        <Button Content="Button(5)" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
+                    ToolTip="Подсказка с InitialShowDelay=1000 и BetweenShowDelay=5000" Click="button2_Click"/>
+            <Button x:Name="button3" Content="Картинка" Width="119" Click="button3_Click" Height="27" >
+                <Button.ToolTip>
+                    <ToolTip HasDropShadow="False" Background="#AA22CCCC">
+                        <StackPanel>
+                            <TextBlock><Run Text="Текст подсказки"/></TextBlock>
+                            <Image Source="/166893-anime_banner-anime-rukav-fan_art-kavajnaya-360x640.jpg"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="Не нажимай" x:Name="button4" Width="118" Height="27">
+                <Button.ToolTip>
+                    <ToolTip HorizontalOffset="10" VerticalOffset="20" Content="БЕГИ"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="Button(5)" HorizontalAlignment="Left" Margin="10,1,0,0" Height="34" Width="118"/>
+        </StackPanel>
         <Button Content="Ne menu1" HorizontalAlignment="Left" Margin="162,205,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
         <Button Content="Ne menu2" HorizontalAlignment="Left" Margin="290,205,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
         <Button Content="Ne menu 3 " HorizontalAlignment="Left" Margin="162,244,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
