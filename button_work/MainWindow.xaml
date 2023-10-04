@@ -5,21 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:button_work"
         mc:Ignorable="d"
-        Title="Task" Height="339" Width="577">
-    <Grid>
-        <StackPanel Margin="10,10,430,2" Name="stackPanel1" Background="#AA22CCCC">
+        Title="Task" Height="339" Width="417">
+    <Grid Margin="0,0,-160,0">
+        <StackPanel Margin="0,0,430,2" Name="stackPanel1" Background="#AA22CCCC">
 
             <Button Name ="button1" Content="Наведись на меня" HorizontalAlignment="Left" Margin="10,49,0,0" 
-                    Height="34" Width="118" ToolTip="Подсказка для кнопки" Click="Button_Click_1">
+                    Height="34" Width="137" ToolTip="Подсказка для кнопки" Click="Button_Click_1">
             </Button>
             <Button Content="Кноппка с зад." 
                     x:Name="button2"
+                    Margin="10,1,0,0"
                     Height="34" 
-                    Width="118"
+                    Width="135"
                     ToolTipService.InitialShowDelay="1000"
                     ToolTipService.BetweenShowDelay="5000"
                     ToolTip="Подсказка с InitialShowDelay=1000 и BetweenShowDelay=5000" Click="button2_Click"/>
-            <Button x:Name="button3" Content="Картинка" Width="119" Click="button3_Click" Height="27" >
+            <Button x:Name="button3" Content="Картинка" Margin="10,1,0,0" Width="146" Click="button3_Click" Height="27" >
                 <Button.ToolTip>
                     <ToolTip HasDropShadow="False" Background="#AA22CCCC">
                         <StackPanel>
@@ -29,17 +30,49 @@
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            <Button Content="Не нажимай" x:Name="button4" Width="118" Height="27">
+            <Button Content="Не нажимай" x:Name="button4" Margin="10,1,0,0" Width="138" Height="27" Click="button4_Click">
                 <Button.ToolTip>
                     <ToolTip HorizontalOffset="10" VerticalOffset="20" Content="БЕГИ"/>
                 </Button.ToolTip>
             </Button>
-            <Button Content="Button(5)" HorizontalAlignment="Left" Margin="10,1,0,0" Height="34" Width="118"/>
+            <Button Content="Магия" HorizontalAlignment="Left" Margin="10,1,0,0" Height="34" Width="137" Click="Button_Click_3">
+                <Button.ToolTip>
+                    <ToolTip Placement="Right" Content="Placement"></ToolTip>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
         <Button Content="Ne menu1" HorizontalAlignment="Left" Margin="162,205,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
         <Button Content="Ne menu2" HorizontalAlignment="Left" Margin="290,205,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
         <Button Content="Ne menu 3 " HorizontalAlignment="Left" Margin="162,244,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
         <Button Content="Ne menu 4 " HorizontalAlignment="Left" Margin="290,244,0,0" VerticalAlignment="Top" Height="34" Width="108"/>
+        <TextBlock TextWrapping="Wrap" Margin="198,73,197,161">
+            Можно перейти по:
+            <Run TextDecorations="Underline" MouseEnter="Run_MouseEnter">
+                ссылку
+            </Run>
+        </TextBlock>
+        <Popup Name="popLink"
+               StaysOpen="False"
+               Placement="Mouse"
+               MaxWidth="200"
+               PopupAnimation="Fade"
+               AllowsTransparency="True">
 
+            <Border BorderThickness="3" 
+                    CornerRadius="3" 
+                    BorderBrush="#AA323232" 
+                    Background="#AA000000">
+
+                <TextBlock Margin="10" TextWrapping="Wrap" Foreground="White">
+                    
+                    Ссылка в текстовом блоке.
+                    <Hyperlink Foreground="#009BFF" 
+                               NavigateUri="http://en.wikipedia.org/wiki/Term"
+                               Click="Lnk_Click">
+                        Wikipedia
+                    </Hyperlink>
+                </TextBlock>
+            </Border>
+        </Popup>
     </Grid>
 </Window>

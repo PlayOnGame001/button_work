@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -47,6 +48,26 @@ namespace button_work
         private void button3_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Run_MouseEnter(object sender, MouseEventArgs e)
+        {
+            popLink.IsOpen = true;
+        }
+
+        private void Lnk_Click(object sender, RoutedEventArgs e)
+        {
+            string fileName = ((Hyperlink)sender).NavigateUri.ToString();
+            Process.Start(fileName);
         }
     }
 }
